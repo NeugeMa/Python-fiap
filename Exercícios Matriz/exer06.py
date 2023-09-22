@@ -1,5 +1,5 @@
-# 6. Preencha uma matriz 5x5 com números aleatórios e exiba a matriz. A seguir, informe o menor
-# elemento da matriz.
+# 6. Preencha uma matriz 5x5 com números aleatórios e exiba a matriz. A seguir, informe o 
+# menor elemento da matriz.
 
 from modulo_matriz import preenche_matriz_aleatoria, exibe_matriz 
 
