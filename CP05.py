@@ -26,14 +26,14 @@ Código linha 104
     Após tudo isso, é retornado o nome do ganhador, e se ninguém ganhou fica vazio, logo não estará na lista de jogadores, 
     mas se caso ele esteja definimos ele como True e o laço para. 
 """
-def definir_jogadores():
+def definir_jogadores():    # definição de jogadores 
     while True:
         try: #verificando se o número de jogadores é válido e se é um número
             qtd = int(input("Digite quantos jogadores irão participar (digite 0 para encerrar): "))
             if 0 <= qtd <= 5:
                 break
             else:
-                print("Número de jogadores inválido, escolha entre 0 e 5")
+                print("Número de jogadores inválido, escolha entre 0 e 5"),02
         except ValueError:
             print("Por favor, insira um número válido.")
     if qtd == 0:
@@ -45,6 +45,7 @@ def definir_jogadores():
         print(nome)
         lista_jogadores.append(nome)
     return lista_jogadores
+
 def criar_cartelas(lista_jogadores):        #criando cartelas pra cada jogador
     lista_cartelas = {}
     for pessoa in lista_jogadores:
@@ -71,6 +72,7 @@ def criar_cartelas(lista_jogadores):        #criando cartelas pra cada jogador
                 cartela[k][j] = pre_cartela[j][k]
         lista_cartelas[pessoa] = cartela
     return lista_cartelas
+
 def exibir_cartelas(lista_cartelas, jogadores):                      #exibindo as cartelas
     for jogador in jogadores:
         cartela_atual = lista_cartelas[jogador]
@@ -84,6 +86,7 @@ def exibir_cartelas(lista_cartelas, jogadores):                      #exibindo a
                 print(cartela_atual[i][j], end=' ')
             print("|", end="\n")
         print(topo_fim+'\n')
+
 def sortear_numero(numeros_sorteados):                       #sorteando os números
     sorteio_valido = False
     while sorteio_valido == False:
@@ -91,6 +94,7 @@ def sortear_numero(numeros_sorteados):                       #sorteando os núme
         if numero not in numeros_sorteados:
             sorteio_valido = True
     return numero
+
 def verificar_cartelas(lista_cartelas, numero_sorteado, jogadores):
     if numero_sorteado > 0 and numero_sorteado <10:
         numero_sorteado = (f'0{numero_sorteado}')
@@ -101,6 +105,7 @@ def verificar_cartelas(lista_cartelas, numero_sorteado, jogadores):
                 if cartela_atual[i][j] == str(numero_sorteado):
                     cartela_atual[i][j] = "XX"
     return lista_cartelas
+
 def verificar_ganhadores(lista_cartelas, lista_jogadores):                 #verificando se tem ganhadores
     ganhador = ""
     for jogador in lista_jogadores:
@@ -122,8 +127,6 @@ def verificar_ganhadores(lista_cartelas, lista_jogadores):                 #veri
             exibir_cartelas(lista_cartelas, lista_jogadores)
             print(f"Parabéns, o vencedor desta rodada é: {ganhador_formatado}")
     return ganhador
-
-
 
 def controlar_ranking(ganhador, demais):
     demais.remove(ganhador)
@@ -156,6 +159,7 @@ def controlar_ranking(ganhador, demais):
             if len(demais) != 0:
                 for i in demais:
                     arquivo.write(i + ' 0')
+
 def exibir_ranking():
     print()
     with open('ranking.txt', 'r') as arquivo:
