@@ -6,6 +6,26 @@ RM 550167 - Vinicius de Alencar Chagas
 
 import random
 
+"""
+Explicação do código;
+Iniciando o código na linha: 150 
+    Começamos com um laço de repetição para sempre continuar rodando 
+        (só irá parar, caso o usuário digite 0)
+
+Código linha 29
+Após nós criamos uma lista de cartelas, para dar inicío a lista de nome de jogadores
+    Depois declaramos que "venceu" como false para o laço de baixo rodar até que um jogador vença e junto disso é 
+    decidido uma lista vazia com números que podem ser sorteados. 
+
+Código linha 48 à 74
+    Já no começo do laço é exibido todas as tabelas uma em cima da outra, após isso o jogador irá ficar apertando enter
+    para criar um novo número sorteado.
+        - A lista de números vai para a função de sortear para não cair o mesmo número. 
+
+Código linha 104
+    Após tudo isso, é retornado o nome do ganhador, e se ninguém ganhou fica vazio, logo não estará na lista de jogadores, 
+    mas se caso ele esteja definimos ele como True e o laço para. 
+"""
 def definir_jogadores():
     while True:
         try: #verificando se o número de jogadores é válido e se é um número
